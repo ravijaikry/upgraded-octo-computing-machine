@@ -4,12 +4,12 @@
       = link_to "New", new_artist_path, class: 'btn btn-primary'
     | Artists
   
-table.table.table-striped
-  thead
-    tr
-      th name
-  tbody
-    - @artists.each do |artist|
-      tr
-        td= link_to artist.name, artist
+.container
+        .row
+          .col-md-2
+            name
+        - @artists.each do |artist|
+         .row
+           .col-md-2
+             = link_to image_tag("http://api.randomuser.me/portraits/men/"+artist.id.to_s+".jpg"), artist
 
