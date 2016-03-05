@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def get_latest_data
-     @latest_song =  Song.recent(1).first
+     @latest_song ||=  Song.recent(1).first
+     @latest_5_song ||= Rails.cache.fetch("latest_5_song", expires_in: 1.hours) do
+      Song.recent(5)
+    end
   end
 end
