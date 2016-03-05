@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :get_all_publisher, only: [:new,:create,:edit,:update]
 
   respond_to :html
 
@@ -14,7 +15,7 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
-    respond_with(@album)
+    respond_with(@album,@publishers)
   end
 
   def edit
@@ -39,6 +40,10 @@ class AlbumsController < ApplicationController
   private
     def set_album
       @album = Album.find(params[:id])
+    end
+
+    def get_all_publisher
+      @publishers = Publisher.all.select("id,name")
     end
 
     def album_params
