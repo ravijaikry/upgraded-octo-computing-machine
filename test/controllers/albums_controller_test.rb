@@ -44,7 +44,6 @@ class AlbumsControllerTest < ActionController::TestCase
     assert_difference('Album.count', -1) do
       delete :destroy, id: @album,:format => "js"
     end
-
     assert_response :success
   end
   
