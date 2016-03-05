@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
   before_action :get_all_publisher, only: [:new,:create,:edit,:update]
 
-  respond_to :html
+  respond_to :html,:js
 
   def index
     @albums = Album.all.includes(:publisher)
@@ -33,8 +33,8 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    @album_id = @album.id
     @album.destroy
-    respond_with(@album)
   end
 
   private
