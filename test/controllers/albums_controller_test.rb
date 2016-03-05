@@ -39,6 +39,13 @@ class AlbumsControllerTest < ActionController::TestCase
     assert_redirected_to album_path(assigns(:album))
   end
 
-  # TODO album destroy tests
+  # Added destroy
+   test "should destroy Album" do
+    assert_difference('Album.count', -1) do
+      delete :destroy, id: @album,:format => "js"
+    end
+
+    assert_response :success
+  end
   
 end
