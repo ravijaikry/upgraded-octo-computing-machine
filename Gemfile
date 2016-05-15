@@ -10,16 +10,19 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'unicorn'
+# gem 'unicorn'
 gem 'mysql2'
 
 # added
 gem 'responders'
 gem 'slim-rails'
 gem 'twitter-bootstrap-rails'
+gem 'capistrano'
+gem 'capistrano-ext'
 
 group :development, :test do
   gem 'byebug'
+
 end
 
 group :development do
