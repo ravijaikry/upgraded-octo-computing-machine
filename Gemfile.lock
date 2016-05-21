@@ -98,6 +98,9 @@ GEM
     net-ssh (3.1.1)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
+    passenger (5.0.28)
+      rack
+      rake (>= 0.8.1)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -196,6 +199,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  passenger
   quiet_assets
   rails (= 4.2.5)
   responders
